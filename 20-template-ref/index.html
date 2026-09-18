@@ -9,17 +9,19 @@
 </head>
 <body>
     <div id="appdiv">  
-        <form @submit.prevent = "handleSubmit()">
+        <!-- js megoldás -->
+        <!-- <form id="userForm" @submit.prevent = "handleSubmit()"> -->
+        <form ref="userForm"></form>
             <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" v-model="name">
-        <p>{{ name }}</p>
+        <input type="text" id="name" name="name" v-model="formData.name">
+        <p>{{ formData.name }}</p>
         </div>
 
         <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" v-model="email">
-        <p>{{ email }}</p>
+        <input type="email" id="email" name="email" v-model="formData.email">
+        <p>{{ formData.email }}</p>
         </div>
 
         <div class="form-group">

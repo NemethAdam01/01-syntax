@@ -1,14 +1,16 @@
 const app = Vue.createApp({
     setup() {
-        const name = Vue.ref('')
-        const email = Vue.ref('')
-
+        const formData = Vue.reactive({
+            name: '',
+            email: ''
+        })
         function handleSubmit()
         {
             //event.preventDefault()
+            console.log(formData)
             console.log(name.value, email.value)
         }
-        return { name, email, handleSubmit }
+        return { formData, handleSubmit }
     }
 })
 
